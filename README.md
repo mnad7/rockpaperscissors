@@ -1,0 +1,1 @@
+Simple command-line javascript rock paper scissors game for Odin Project curriculum
