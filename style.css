@@ -1,0 +1,54 @@
+body {
+    font-family: sans-serif;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f5/Reggie_Fils-Aime_-_Game_Developers_Conference_2011_-_Day_2_%281%29.jpg");
+    background-repeat: repeat;
+    background-size: 200px 300px;
+}
+
+#container {
+    background-color: skyblue;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 15%, rgba(0,212,255,1) 89%);
+    height: 100%;
+    max-width: 60%;
+    margin: auto;
+    border-style: ridge;
+    border-radius: 10px;
+    border-color: red;
+}
+
+#heading {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+h4 {
+    text-align: center;
+    color: red;
+    font-size: 30pt;
+}
+
+button {
+    text-align: center;
+    font-size: 23px;
+    height: 80px;
+    width: 160px;
+    background-color: red;
+    color: blue;
+    display: block;
+    margin: 10px auto;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    box-shadow: 5px 5px;
+}
+
+button:hover {
+    background-color: black;
+    color: red;
+}
+
+#input {
+    margin: auto auto;
+    text-align: center;
+    position: relative;
+}

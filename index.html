@@ -2,8 +2,20 @@
 <html>
     <head>
         <title>Scuffed Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div id="container">
+            <div id="heading">
+                <h4>ROCK PAPER SCISSORS</h4>
+            </div>
+            <div id="input">
+                <button id="rock">ROCK.</button>
+                <button id="paper">PAPER.</button>
+                <button id="scissors">SCISSORS.</button>
+            </div>
+        </div>
+
         <script>
             function computerPlay() {
                 let result = Math.floor(Math.random() * 3)
@@ -16,7 +28,7 @@
                         return 'paper'
                     case 2: 
                         return 'scissors'
-                
+                    
                 }
             }
 
@@ -26,26 +38,26 @@
 
                 if(playerSelection == computerSelection)
                 {
-                    return "It's a tie. The computer also chose " + playerSelection + "."
+                    return "IT'S A TIE. THE COMPUTER ALSO CHOSE " + playerSelection + "."
                 }
                 
                 switch(playerSelection)
                 {
                     case 'rock': 
                         if(computerSelection == 'scissors')
-                            return "You win. Rock beats scissors."
-                        return "You lose. Paper beats rock."
+                            return "YOU WIN. ROCK BEATS SCISSORS."
+                        return "YOU LOSE. PAPER BEATS ROCK."
                     case 'paper': 
                         if(computerSelection == 'rock')
-                            return "You win. Paper beats rock."
-                        return "You lose. Scissors beats paper."
+                            return "YOU WIN. PAPER BEATS ROCK."
+                        return "YOU LOSE. SCISSORS BEATS PAPER."
                     case 'scissors': 
                         if(computerSelection == 'paper')
-                            return "You win. Scissors beats paper."
-                        return "You lose. Rock beats scissors." 
+                            return "YOU WIN. SCISSORS BEATS PAPER."
+                        return "YOU LOSE. ROCK BEATS SCISSORS." 
                 }
 
-                return "Your input was invalid, you forfeit."
+                return "YOUR INPUT WAS INVALID, YOU FORFEIT."
             }
 
             function game() {
@@ -55,6 +67,10 @@
                     
                     console.log(playRound(input, computerPlay()))
                 }
+            }
+
+            function updateDOM() {
+
             }
         </script>
     </body>
