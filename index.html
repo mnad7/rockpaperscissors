@@ -7,71 +7,118 @@
     <body>
         <div id="container">
             <div id="heading">
-                <h4>ROCK PAPER SCISSORS</h4>
+                <h1>ROCK PAPER SCISSORS</h1>
             </div>
             <div id="input">
                 <button id="rock">ROCK.</button>
                 <button id="paper">PAPER.</button>
                 <button id="scissors">SCISSORS.</button>
             </div>
+            <div id="results">
+                <h2 id="score">YOU 0 - COMPUTER 0</h2>
+                <h2 id="info">test.</h2>
+                
+            </div>
         </div>
 
         <script>
+            let playerScore = 0, computerScore = 0;
+            const score = document.querySelector("#score");
+            const info = document.querySelector("#info");
+            const btnRock = document.querySelector("#rock");
+            const btnPaper = document.querySelector("#paper");
+            const btnScissors = document.querySelector("#scissors");
+
             function computerPlay() {
-                let result = Math.floor(Math.random() * 3)
+                let result = Math.floor(Math.random() * 3);
 
                 switch(result)
                 {
                     case 0:
-                        return 'rock'
+                        return 'rock';
                     case 1:
-                        return 'paper'
+                        return 'paper';
                     case 2: 
-                        return 'scissors'
+                        return 'scissors';
                     
                 }
             }
 
             function playRound(playerSelection, computerSelection) {
 
-                playerSelection = playerSelection.toLowerCase()
+                playerSelection = playerSelection.toLowerCase();
 
                 if(playerSelection == computerSelection)
                 {
-                    return "IT'S A TIE. THE COMPUTER ALSO CHOSE " + playerSelection + "."
+                    return "IT'S A TIE. THE COMPUTER CHOSE THE SAME.";
                 }
                 
                 switch(playerSelection)
                 {
                     case 'rock': 
                         if(computerSelection == 'scissors')
-                            return "YOU WIN. ROCK BEATS SCISSORS."
-                        return "YOU LOSE. PAPER BEATS ROCK."
+                            return "YOU WIN. ROCK BEATS SCISSORS.";
+                        return "YOU LOSE. PAPER BEATS ROCK.";
                     case 'paper': 
                         if(computerSelection == 'rock')
-                            return "YOU WIN. PAPER BEATS ROCK."
-                        return "YOU LOSE. SCISSORS BEATS PAPER."
+                            return "YOU WIN. PAPER BEATS ROCK.";
+                        return "YOU LOSE. SCISSORS BEATS PAPER.";
                     case 'scissors': 
                         if(computerSelection == 'paper')
-                            return "YOU WIN. SCISSORS BEATS PAPER."
-                        return "YOU LOSE. ROCK BEATS SCISSORS." 
+                            return "YOU WIN. SCISSORS BEATS PAPER.";
+                        return "YOU LOSE. ROCK BEATS SCISSORS.";
                 }
 
                 return "YOUR INPUT WAS INVALID, YOU FORFEIT."
             }
 
+            /*
             function game() {
                 for(let i = 0; i < 5; i++)
                 {
-                    let input = prompt("Rock, paper, scissors, SHOOT:")
+                    let input = prompt("Rock, paper, scissors, SHOOT:");
                     
-                    console.log(playRound(input, computerPlay()))
+                    console.log(playRound(input, computerPlay()));
                 }
+            }*/
+
+            function updateScore(s) {
+                let result = playRound(s, computerPlay());
+                let c = result.charAt(4);
+                switch(c)
+                {
+                    case 'W':
+                        playerScore++;
+                        break;
+                    case 'L':
+                        computerScore++;
+                        break;
+                    default:
+                        break;
+                }
+                updateDOM(result);
             }
 
-            function updateDOM() {
-
+            function updateDOM(s) {
+                score.textContent = "YOU " + playerScore + " - COMPUTER " + computerScore;
+                info.textContent = s;
             }
+
+            function reset() {
+                playerScore = 0;
+                computerScore = 0;
+                updateDom();
+            }
+            btnRock.addEventListener('click', () => {
+                updateScore('rock');
+            });
+            btnPaper.addEventListener('click', () => {
+                updateScore('paper');
+            });
+            btnScissors.addEventListener('click', () => {
+                updateScore('scissors');
+            });
+
         </script>
     </body>
 </html>

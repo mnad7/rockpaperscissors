@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f5/Reggie_Fils-Aime_-_Game_Developers_Conference_2011_-_Day_2_%281%29.jpg");
+    background-image: url("Reggie.jpg");
     background-repeat: repeat;
     background-size: 200px 300px;
 }
@@ -21,7 +21,7 @@ body {
     padding-bottom: 10px;
 }
 
-h4 {
+h1 {
     text-align: center;
     color: red;
     font-size: 30pt;
@@ -51,4 +51,18 @@ button:hover {
     margin: auto auto;
     text-align: center;
     position: relative;
+}
+
+#results {
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
+}
+
+#info {
+    color: red;
+    margin: auto auto;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
 }
